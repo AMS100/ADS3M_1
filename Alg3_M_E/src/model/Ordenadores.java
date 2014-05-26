@@ -179,14 +179,13 @@ public class Ordenadores {
 	 */
 	public static void comparaOrdenadores() throws Exception {
 		limpaVetor(true);
-		nomeOrdenador = "BUBLE SORT COMPARARADA";
+		nomeOrdenador = "BUBLE SORT COMPARADA";
 		carregaBubleSort(false);
 		informaStatistica(true);
 		limpaVetor(true);
-		nomeOrdenador = "QUICK SORT COMPARARDA";
+		nomeOrdenador = "QUICK SORT COMPARADA";
 		carregaBubleSort(false);
 		informaStatistica(true);
-		//selecionaOrdenador();
 	}
 	
 	
