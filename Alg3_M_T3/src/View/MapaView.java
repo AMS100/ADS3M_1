@@ -60,6 +60,7 @@ public class MapaView {
 			Prints.msgb("Não foi possível imprimir o mapaMod!");
 			Prints.msg("" +MapaMod.getLinha() + "x" + MapaMod.getColuna() + "\n\n");
 		}
+		setLetra('A');
 	}
 	
 	/**
