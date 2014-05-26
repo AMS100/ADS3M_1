@@ -3,7 +3,7 @@ package Controller;
 import java.util.InputMismatchException;
 
 import Model.SoldadoMod;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 public class SoldadoCont extends SoldadoMod {
 

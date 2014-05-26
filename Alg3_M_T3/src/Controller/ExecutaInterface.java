@@ -1,20 +1,16 @@
 package Controller;
 
 import Model.MapaMod;
-import View.MapaView;
-import View.NaviosView;
-import View.NiveisView;
-import View.SoldadosView;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
-public class InterfaceCont {
+public class ExecutaInterface {
 	
 	MapaMod mapaMod = new MapaMod();
-	MapaView mapaView = new MapaView();
+	PrintMapa printMapa = new PrintMapa();
 	MapaCont mapaCont = new MapaCont();
-	NiveisView niveis  = new NiveisView();
-	NaviosView naviosView = new NaviosView();
-	SoldadosView soldadoView = new SoldadosView();
+	PrintNiveis PrintNiveis  = new PrintNiveis();
+	PrintNavios printNavios = new PrintNavios();
+	PrintSoldados printSoldado = new PrintSoldados();
 	Batalha batalha = new Batalha();
 
 	/**
@@ -24,11 +20,11 @@ public class InterfaceCont {
 	public void listaConsultas() throws Exception {
 		batalha.iniciaMapa();
 		Prints.msgl();
-		naviosView.imprime(false,true);
+		printNavios.imprime(false,true);
 		Prints.msgl();
-		niveis.imprime(false ,true);
+		PrintNiveis.imprime(false ,true);
 		Prints.msgl();
-		soldadoView.imprime();
+		printSoldado.imprime();
 	}
 	
 	/**
@@ -37,7 +33,7 @@ public class InterfaceCont {
 	 * @throws Exception
 	 */
 	public void consultaNavios(Boolean filtrar,Boolean mostraCabecalho) throws Exception {
-		naviosView.imprime(filtrar,mostraCabecalho);
+		printNavios.imprime(filtrar,mostraCabecalho);
 		Prints.msgl();
 	}
 	
@@ -49,7 +45,7 @@ public class InterfaceCont {
 	 */
 	public void consultaNiveis(Boolean filtrar) throws Exception {
 		Prints.msgl();
-		niveis.imprime(filtrar,true);
+		PrintNiveis.imprime(filtrar,true);
 	}
 	
 	/**
@@ -58,6 +54,6 @@ public class InterfaceCont {
 	 */
 	public void consultaSoldado() throws Exception {
 		Prints.msgl();
-		soldadoView.imprime();
+		printSoldado.imprime();
 	}
 }

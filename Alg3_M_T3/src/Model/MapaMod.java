@@ -1,6 +1,6 @@
 package Model;
 
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe de criação do mapaMod

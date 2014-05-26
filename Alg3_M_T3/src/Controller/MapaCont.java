@@ -3,8 +3,7 @@ package Controller;
 import java.util.InputMismatchException;
 
 import Model.MapaMod;
-import View.MapaView;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe para edição e personalização dos navios (NÃO IMPLEMENTADA)
@@ -12,7 +11,7 @@ import Model.Utilitarios.Prints;
  */
 public class MapaCont extends MapaMod {
 	
-	MapaView mapaView = new MapaView();
+	PrintMapa mapaView = new PrintMapa();
 	
 	
 	public static void setaColuna() throws Exception {

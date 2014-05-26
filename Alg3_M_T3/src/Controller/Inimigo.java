@@ -2,8 +2,7 @@ package Controller;
 
 import Model.MapaMod;
 import Model.SoldadoMod;
-import View.MapaView;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe validadora de comandos
@@ -13,7 +12,7 @@ public class Inimigo {
 	
 	private static int chances = 0;
 	private static int acertos = 0;
-	MapaView mapaView = new MapaView();
+	PrintMapa mapaView = new PrintMapa();
 	
 	/**
 	 * @param acertos

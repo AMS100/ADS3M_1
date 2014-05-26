@@ -1,12 +1,12 @@
-package View;
+package Controller;
 import Model.NaviosMod;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  *Classe de impressão e consulta a navios
  * @author Neimar, Aurélio
  */
-public class NaviosView {
+public class PrintNavios {
 	String acum =" ";
 	
 	/**

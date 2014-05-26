@@ -2,9 +2,7 @@ package Controller;
 
 import Model.MapaMod;
 import Model.NaviosMod;
-import View.MapaView;
-import View.SoldadosView;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe responsável pela distribuição das embarcações no mapaMod
@@ -13,9 +11,9 @@ import Model.Utilitarios.Prints;
 public class Estrategia {
 	
 	MapaMod mapaMod = new MapaMod();
-	MapaView mapaView = new MapaView();
+	PrintMapa mapaView = new PrintMapa();
 	Inimigo inimigo = new Inimigo(); 
-	SoldadosView soldadoView = new SoldadosView();
+	PrintSoldados soldadoView = new PrintSoldados();
 
 	private static int nivel;
 	private int contUnidades;

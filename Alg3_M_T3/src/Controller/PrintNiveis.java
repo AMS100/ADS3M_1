@@ -1,13 +1,13 @@
-package View;
+package Controller;
 
 import Model.NiveisMod;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe de impressão de níveis de jogo
  * @author Neimar, Aurélio
  */
-public class NiveisView {
+public class PrintNiveis {
 	String acum =" ";
 	
 	/**

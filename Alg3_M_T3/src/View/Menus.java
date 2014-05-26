@@ -1,6 +1,5 @@
 package View;
 
-import Model.Utilitarios.Prints;
 
 public class Menus extends Prints {
 	public static void menuJogar() {		

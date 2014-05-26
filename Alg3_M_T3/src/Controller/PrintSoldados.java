@@ -1,14 +1,13 @@
-package View;
+package Controller;
 
-import Controller.Inimigo;
 import Model.SoldadoMod;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe de impressão de dados do soldado
  * @author Neimar, Aurélio
  */
-public class SoldadosView extends SoldadoMod {
+public class PrintSoldados extends SoldadoMod {
 	
 	/**
 	 * Método de avaliação de nome 

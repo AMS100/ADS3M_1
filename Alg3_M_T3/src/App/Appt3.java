@@ -1,10 +1,13 @@
-package View;
+package App;
 
+import Controller.PrintInterface;
 import Model.Utilitarios.*;
+import View.Menus;
+import View.Prints;
 
 public class Appt3 {
 
-	Interface Interface = new Interface();	
+	PrintInterface Interface = new PrintInterface();	
 	Dia dia = new Dia();
 
 	

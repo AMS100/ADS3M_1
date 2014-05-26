@@ -1,5 +1,7 @@
 package Model.Utilitarios;
 
+import View.Prints;
+
 /**
  * Classe de impressao de pressagios 
  * @author Neimar, Aurélio

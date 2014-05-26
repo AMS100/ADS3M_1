@@ -1,26 +1,21 @@
-package View;
+package Controller;
 
-import Controller.Batalha;
-import Controller.Inimigo;
-import Controller.InterfaceCont;
-import Controller.Estrategia;
-import Controller.MapaCont;
-import Controller.SoldadoCont;
 import Model.MapaMod;
-import Model.Utilitarios.*;
+import View.Menus;
+import View.Prints;
 
 /**
  * Classe de execução do programa com interação com o usuário
  * @author Neimar, Aurélio
  */
-public class Interface extends Prints {
+public class PrintInterface extends Prints {
 	
 	// String comando;
-	InterfaceCont interfaceCont =  new InterfaceCont();
+	ExecutaInterface interfaceCont =  new ExecutaInterface();
 	Estrategia estrategia = new Estrategia();
 	Batalha batalha = new Batalha();
 	MapaMod mapaMod = new MapaMod();
-	MapaView mapaView = new MapaView();
+	PrintMapa mapaView = new PrintMapa();
 	SoldadoCont soldado = new SoldadoCont();
 	
 	/**

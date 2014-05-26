@@ -5,9 +5,7 @@ import java.util.InputMismatchException;
 import Controller.Inimigo;
 import Model.MapaMod;
 import Model.NiveisMod;
-import View.MapaView;
-import View.NiveisView;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe de execução do jogo, bem como controladora de passagens de fase do jogo
@@ -19,8 +17,8 @@ public class Batalha {
 	
 	Inimigo inimigo = new Inimigo();
 	MapaMod mapaMod = new MapaMod();
-	MapaView mapaView =  new MapaView();
-	NiveisView naviosView = new NiveisView();
+	PrintMapa mapaView =  new PrintMapa();
+	PrintNiveis naviosView = new PrintNiveis();
 	Estrategia estrategia = new Estrategia();
 	
 	
