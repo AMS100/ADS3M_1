@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="Controller/Utilitarios/package-info.java|Controller/package-info.java|Model/package-info.java|View/package-info.java|Aplicacao/package-info.java" kind="src" path="src"/>
+	<classpathentry excluding="C/Utilitarios/package-info.java|C/package-info.java|M/package-info.java|V/package-info.java|Aplicacao/package-info.java" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JRE-1.1"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

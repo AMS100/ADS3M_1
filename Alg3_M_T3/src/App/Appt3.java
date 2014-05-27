@@ -1,9 +1,9 @@
 package App;
 
-import Controller.Comandos;
-import Model.Utilitarios.*;
-import View.Menus;
-import View.Prints;
+import C.Comandos;
+import C.Utilitarios.*;
+import V.Menus;
+import V.View;
 
 public class Appt3 {
 
@@ -12,7 +12,7 @@ public class Appt3 {
 
 	
 	private void escreveCabecalho() {
-	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM-VINDO");
+	    View.msgb("		JOGO BATALHA NAVAL \n\n		     BEM-VINDO");
 	}
 	
 	/**

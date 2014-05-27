@@ -3,10 +3,10 @@ Planejamento inicial
 Estrutura de pasta
     src
         "Dados" Onde será armazenado arquivo da lista
-        "Aplicacao" Onde o programa principal será executado
+        "App" Onde o programa principal será executado
         "Arquivos" Onde será feito os controles de registros da lista
         "Navegacao" Onde serão executadas as pesquisas à lista
-        "model" Onde serão armazenadas as classes de estrutura do programa
+        "M" Onde serão armazenadas as classes de estrutura do programa
 */  
 
 // << Pacote armazenamento de dados >>    		
@@ -16,7 +16,7 @@ Estrutura de pasta
 
 			
 // << Pacote de execução do programa >>		
-	Package Aplicacao
+	Package App
 		    
 		// *Importa 
 		*  Class formatos
@@ -148,7 +148,7 @@ Estrutura de pasta
             }
 			
 // << Pacote de estruturas do sistema >>	
-	Package model
+	Package M
 		
 		class Nodo {
 		
