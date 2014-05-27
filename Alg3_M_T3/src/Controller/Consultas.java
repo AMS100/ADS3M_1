@@ -3,7 +3,7 @@ package Controller;
 import Model.MapaMod;
 import View.Prints;
 
-public class ExecutaInterface {
+public class Consultas {
 	
 	MapaMod mapaMod = new MapaMod();
 	PrintMapa printMapa = new PrintMapa();

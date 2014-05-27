@@ -17,8 +17,8 @@ public class Batalha {
 	
 	Inimigo inimigo = new Inimigo();
 	MapaMod mapaMod = new MapaMod();
-	PrintMapa mapaView =  new PrintMapa();
-	PrintNiveis naviosView = new PrintNiveis();
+	PrintMapa printMapa =  new PrintMapa();
+	PrintNiveis printNavios = new PrintNiveis();
 	Estrategia estrategia = new Estrategia();
 	
 	
@@ -31,8 +31,8 @@ public class Batalha {
 		MapaMod.setLinha(NiveisMod.getMapanivel1());
 		MapaMod.setColuna(NiveisMod.getMapanivel1());
 		MapaMod.criaMapa();
-		naviosView.executa(true, NiveisMod.getNivel1());
-		mapaView.imprime(true,"");
+		printNavios.executa(true, NiveisMod.getNivel1());
+		printMapa.imprime(true,"");
 	}
 	
 	
@@ -46,8 +46,8 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
 			MapaMod.criaMapa();
-			naviosView.executa(true, NiveisMod.getNivel2());
-			mapaView.imprime(true,"");	
+			printNavios.executa(true, NiveisMod.getNivel2());
+			printMapa.imprime(true,"");	
 		}
 		
 		
@@ -55,8 +55,8 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
 			MapaMod.criaMapa();
-			naviosView.executa(true, NiveisMod.getNivel3());
-			mapaView.imprime(true,"");
+			printNavios.executa(true, NiveisMod.getNivel3());
+			printMapa.imprime(true,"");
 		}
 		
 		
@@ -64,8 +64,8 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
 			MapaMod.criaMapa();
-			naviosView.executa(true, NiveisMod.getNivel4());
-			mapaView.imprime(true,"");		
+			printNavios.executa(true, NiveisMod.getNivel4());
+			printMapa.imprime(true,"");		
 		}
 		
 		
@@ -73,8 +73,8 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
 			MapaMod.criaMapa();
-			naviosView.executa(true, NiveisMod.getNivel5());
-			mapaView.imprime(true,"");		
+			printNavios.executa(true, NiveisMod.getNivel5());
+			printMapa.imprime(true,"");		
 		}		
 	
 	}
@@ -90,7 +90,7 @@ public class Batalha {
 	 * @throws Exception
 	 */
 	protected void executaFase() throws Exception {
-		mapaView.setLetra('A');
+		printMapa.setLetra('A');
 		pulaFase();
 		Estrategia.setNivel(getAddn());
 		estrategia.tatica();

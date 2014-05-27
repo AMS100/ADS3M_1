@@ -1,13 +1,13 @@
 package App;
 
-import Controller.PrintInterface;
+import Controller.Comandos;
 import Model.Utilitarios.*;
 import View.Menus;
 import View.Prints;
 
 public class Appt3 {
 
-	PrintInterface Interface = new PrintInterface();	
+	Comandos comando = new Comandos();	
 	Dia dia = new Dia();
 
 	
@@ -22,7 +22,7 @@ public class Appt3 {
 		escreveCabecalho();
 		dia.defineSaudacao();
 		Menus.menuMain();
-		Interface.inicia();
+		comando.inicia();
 	}
 	
 

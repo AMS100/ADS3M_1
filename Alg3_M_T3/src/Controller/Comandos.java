@@ -8,14 +8,14 @@ import View.Prints;
  * Classe de execução do programa com interação com o usuário
  * @author Neimar, Aurélio
  */
-public class PrintInterface extends Prints {
+public class Comandos extends Prints {
 	
 	// String comando;
-	ExecutaInterface interfaceCont =  new ExecutaInterface();
+	Consultas consulta =  new Consultas();
 	Estrategia estrategia = new Estrategia();
 	Batalha batalha = new Batalha();
 	MapaMod mapaMod = new MapaMod();
-	PrintMapa mapaView = new PrintMapa();
+	PrintMapa printMapa = new PrintMapa();
 	SoldadoCont soldado = new SoldadoCont();
 	
 	/**
@@ -28,12 +28,12 @@ public class PrintInterface extends Prints {
 		switch (digita("")) {
 		
 		case "navios":
-			interfaceCont.consultaNavios(true,false);
+			consulta.consultaNavios(true,false);
 			filtra();
 			break;
 		
 		case "níveis":
-			interfaceCont.consultaNiveis(true);
+			consulta.consultaNiveis(true);
 			filtra();
 			break;
 		
@@ -66,17 +66,17 @@ public class PrintInterface extends Prints {
 			break;
 
 		case "navios":
-			interfaceCont.consultaNavios(false,true);
+			consulta.consultaNavios(false,true);
 			imprime();
 			break;
 			
 		case "niveis":
-			interfaceCont.consultaNiveis(false);
+			consulta.consultaNiveis(false);
 			imprime();
 			break;
 			
 		case "soldado":
-			interfaceCont.consultaSoldado();
+			consulta.consultaSoldado();
 			imprime();
 			break;		
 			
@@ -85,7 +85,7 @@ public class PrintInterface extends Prints {
 			break;
 			
 		case "todos":
-			interfaceCont.listaConsultas();
+			consulta.listaConsultas();
 			imprime();
 			break;
 			
@@ -145,7 +145,7 @@ public class PrintInterface extends Prints {
 		case "personalizar":	
 			soldado.editaDados();
 			MapaCont.iniciaMapa();
-			mapaView.imprime(true, "\nMAPA PERSONALIZADO! \n");
+			printMapa.imprime(true, "\nMAPA PERSONALIZADO! \n");
 			Joga();
 			break;
 				
@@ -178,7 +178,7 @@ public class PrintInterface extends Prints {
 			break;
 		
 		case "regras":
-			mapaView.imprimeRegras();
+			printMapa.imprimeRegras();
 			Menus.menuMain();
 			inicia();
 			break;

@@ -11,7 +11,7 @@ import View.Prints;
  */
 public class MapaCont extends MapaMod {
 	
-	PrintMapa mapaView = new PrintMapa();
+	PrintMapa printMapa = new PrintMapa();
 	
 	
 	public static void setaColuna() throws Exception {
@@ -58,6 +58,6 @@ public class MapaCont extends MapaMod {
 	 * @throws Exception
 	 */
 	public void imprimeView(Boolean mostraMsgCabelho,String texto) throws Exception {
-		mapaView.imprime(mostraMsgCabelho, texto);		
+		printMapa.imprime(mostraMsgCabelho, texto);		
 	}	
 }
