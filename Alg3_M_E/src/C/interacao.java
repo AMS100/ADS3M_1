@@ -4,9 +4,9 @@ import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arquivos.Memoria;
+import C.Lista.ListaEncadeada;
 import C.Navegacao.Consultas;
 import M.Ordenadores;
-import M.Lista.ListaEncadeada;
 import M.Utilitarios.Auxiliar;
 
 /**
@@ -16,12 +16,13 @@ import M.Utilitarios.Auxiliar;
  * @param <T>
  * @param <string>
  */
-public class interacao<T, string> {
+public class Interacao {
 	
+	static Consultas consulta =  new Consultas();
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	static Consultas<?> consultas = new Consultas<>();
 	static Memoria memoria =  new Memoria();
+	
 	static Registrador registrador = new Registrador();
 	
 	/**
@@ -110,7 +111,7 @@ public class interacao<T, string> {
 		
 		//Obs. deve ser alerado dependendo da configuração da maquina para < ou > 
 		
-		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
+		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			View.msgr("\nVerificação concluída, há memória disponível!\n");
 			registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			
@@ -128,8 +129,8 @@ public class interacao<T, string> {
 		
 		switch (Auxiliar.digita("")) {
 		
-		case "consultar":	
-			consultas.selecionaComando();			
+		case "consultar":
+			consulta.selecinaExtrutura();
 			break;
 			
 		case "executar":

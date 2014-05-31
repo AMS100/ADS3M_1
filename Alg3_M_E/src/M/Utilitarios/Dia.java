@@ -1,8 +1,6 @@
 package M.Utilitarios;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import App.View;
 
 public class Dia {

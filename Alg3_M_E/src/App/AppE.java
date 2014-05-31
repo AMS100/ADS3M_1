@@ -2,7 +2,7 @@ package App;
 
 import java.util.InputMismatchException;
 
-import C.interacao;
+import C.Interacao;
 import M.Ordenadores;
 import M.Utilitarios.Auxiliar;
 import M.Utilitarios.Dia;
@@ -29,7 +29,7 @@ public class AppE {
 	 */
 	private void iniciaInteracao() throws Exception {
 		Menus.mostarMenuApp();				
-		interacao.iniciaTarefas();
+		Interacao.iniciaTarefas();
 	}
 	
 	
@@ -43,26 +43,42 @@ public class AppE {
 			Menus.menuSelecinaAtividade();	
 			switch (Auxiliar.digita("Atividade")) {
 			
-			case "t1":	
+			case "t1":
 				Auxiliar.setOpcao("LISTA");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();
 				break;
 				
 			case "t2":				
 				Auxiliar.setOpcao("BINARIA");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();
 				break;
 				
-			case "t4":	
+			case "t4":
 				Auxiliar.setOpcao("ORDENADORES");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();	
 				break;
 				
 			case "t5":
-				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
+				Auxiliar.setOpcao("ARVORE");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
+				Auxiliar.setDetalhes("binaria");
 				iniciaInteracao();				
 				break;
 			
+			case "t6":
+				Auxiliar.setOpcao("ARVORE");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
+				Menus.menuArvores(true, false, true);
+				iniciaInteracao();				
+				break;
+
+			case "glossario":
+				Menus.glossario();				
+				break;
+				
 			case "sair":
 				View.sair();
 				break;
@@ -87,8 +103,7 @@ public class AppE {
 	private void run() throws Exception {
 		escreveCabecalho();
 		Dia.defineSaudacao();		
-		selecionaAtividade();
-		
+		selecionaAtividade();		
 	}
 	
 

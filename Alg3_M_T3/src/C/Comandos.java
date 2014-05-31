@@ -144,7 +144,7 @@ public class Comandos extends View {
 		
 		case "personalizar":	
 			soldado.editaDados();
-			MapaCont.iniciaMapa();
+			Gerador.iniciaMapa();
 			printMapa.imprime(true, "\nMAPA PERSONALIZADO! \n");
 			Joga();
 			break;

@@ -1,5 +1,4 @@
-package M.Arvore;
-
+package C.Arvores.Binaria;
 import App.View;
 import C.Registrador;
 import M.Utilitarios.Auxiliar;
@@ -9,7 +8,7 @@ import M.Utilitarios.Auxiliar;
  * @author Neimar, Aurelio *
  * @param <T>
  */
-public class Nodo<T extends Comparable<T>>{
+public class Nodo<T extends Comparable<T>> {
 	protected Nodo<T> pai;
 	private Nodo<T> esq;
 	private Nodo<T> dir;
@@ -72,8 +71,10 @@ public class Nodo<T extends Comparable<T>>{
 	/**
 	 * Método de impressão de toda a árvore	
 	 */
-	public void imprime(){
+	public void imprime() {
+		
 		View.msg("\n" + valor);
+		
 		if(esq != null){			
 			esq.imprime();	
 		}
@@ -82,13 +83,13 @@ public class Nodo<T extends Comparable<T>>{
 			dir.imprime();				
 		}		
 	}
-		
+	
 	
 	/**
 	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
 	 */
 	public void guardaEdicao(){
-		Registrador.setAcum(Registrador.getAcum() +"\n" +valor);
+		Registrador.setAcum("\n" +valor);
 		if(esq != null){			
 			esq.guardaEdicao();	
 		}
@@ -168,13 +169,13 @@ public class Nodo<T extends Comparable<T>>{
 	    
 	    }else if ( no.valor.compareTo(no.valor) > nome.compareTo(nome)){  
 	    	if ( no != null ) {  
-	    		Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+	    		Auxiliar.setContador(true); //Contador  
 	            buscEmAltura(no.dir , nome );  
 	        }
 	    
 	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
 	    	if( no != null){  
-	    		Auxiliar.setContador(Auxiliar.getContador()+1); //Contador    
+	    		Auxiliar.setContador(true); //Contador    
 	            buscEmAltura(no.dir , nome );  
 	        } 
 	    }
@@ -196,15 +197,15 @@ public class Nodo<T extends Comparable<T>>{
 			int comper = campo.compareTo(no.getValor());
 			
 			if ( comper == 0){
-				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Auxiliar.setContador(true); //Contador  
 				View.msg(no + "\nComparacoes: " +Auxiliar.getContador());				
 			
 			}else if (comper < 0){
-				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Auxiliar.setContador(true); //Contador  
 				buscaDado(no.esq, campo);
 			
 			}else {
-				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Auxiliar.setContador(true); //Contador  
 				buscaDado(no.dir,campo);
 			}
 		}	

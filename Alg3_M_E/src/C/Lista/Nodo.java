@@ -1,5 +1,10 @@
-package M.Lista;
+package C.Lista;
 
+/**
+ * Classe de definição deo nodo da lista
+ * @author Neimar, Aurélio
+ * @param <T>
+ */
 public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 
 	private T chave;

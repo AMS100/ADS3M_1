@@ -1,44 +1,64 @@
 package M.Utilitarios;
-
 import java.util.Scanner;
-
 import App.Menus;
 import App.View;
 
 /**
- * Classe com métodos globais de apoio à execução do programa
- * @author Neimar, Aurélio
+ * Classe com mï¿½todos globais de apoio ï¿½ execuï¿½ï¿½o do programa
+ * @author Neimar, Aurï¿½lio
  */
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
-	static String opcao; // Variável global de apoio para parâmetro "strings"
-	static int contador = 0; // Variável global contadora de açãoes 
+	static String opcao; // Variïável global de apoio para parâmetro "strings"
+	static int contador = 0; // Variïável global contadora de aïções 
+	static String detalhes; // Variável global de apoio para detalhar ações do programa "strings"
+	
 	
 	public static void setOpcao(String opcao) {
 		Auxiliar.opcao = opcao;
 	}
 	
+	 
 	public static String getOpcao() {
 		return opcao;
 	}
 	
-	public static void setContador(int contador) {
-		Auxiliar.contador = contador;
+	
+	public static void setDetalhes(String detalhes) {
+		Auxiliar.detalhes = detalhes;
 	}
+	
+	public static String getDetalhes() {
+		return detalhes;
+	}
+	
+	/**
+	 * Método global de contagem sequecial
+	 * @param contar
+	 */
+	public static void setContador(boolean contar) {
+		if (contar == true){
+			Auxiliar.contador++; // Conta ações em tempo de execução
+		}else{
+			Auxiliar.contador = 0; //Limpa variavel contadorea
+		}
+	}
+	
 	
 	public static int getContador() {
 		return contador;
 	}
 	
+	
 	/**
-	 * Método de definção de status das atividades do programa
+	 * Mï¿½todo de definï¿½ï¿½o de status das atividades do programa
 	 * @param status
 	 * @return
 	 */
 	public static String statusAcao(int status, int sucesso) {
 		String r, s;	
 		
-		if (sucesso == 7) { // Avaliação de sucesso da atividade
+		if (sucesso == 7) { // Avaliaï¿½ï¿½o de sucesso da atividade
 			s = "com sucesso!";
 		} else if(sucesso == -1) {
 			s = "sem sucesso"; 
@@ -50,7 +70,7 @@ public class Auxiliar {
 		
 		case -1:r = "Pendente " + s; 
 			break;
-		case 0:	r = "Não definido " + s; 
+		case 0:	r = "Nï¿½o definido " + s; 
 			break;
 		case 1:	r = "Em planejamento " + s; 
 			break;
@@ -58,26 +78,26 @@ public class Auxiliar {
 			break;
 		case 3:	r = "Em teste " + s; 
 			break;
-		case 4:	r = "Em revisão " + s; 
+		case 4:	r = "Em revisï¿½o " + s; 
 			break;
-		case 5:	r = "Concluído(a) parcialmente " + s; 
+		case 5:	r = "Concluï¿½do(a) parcialmente " + s; 
 			break;
-		case 6:	r = "Concluído(a) " + s; 
+		case 6:	r = "Concluï¿½do(a) " + s; 
 			break;
 		case 7:	r = "Finalizado(a) " + s; 
 			break;		
 		default:
-			r = "inválido "; break;
+			r = "invï¿½lido "; break;
 		}
 		
-		return "Status: " +r;
+		return r;
 	}
 	
 	
 //============================================================================	
 	
 	/**
-	 * Método de Label dos comandos do sistema
+	 * Mï¿½todo de Label dos comandos do sistema
 	 * @param label
 	 */
 	public static void paleta(String label) {
@@ -100,7 +120,7 @@ public class Auxiliar {
 	}
 	
 	/**
-	 * Método de retorno que recebe ficheiro "label" com parâmetro,
+	 * Método de retorno que recebe ficheiro "label" com parï¿½metro,
 	 * e retorna uma "string" para filtros
 	 * @param label
 	 * @return
@@ -113,7 +133,7 @@ public class Auxiliar {
 //============================================================================
 
 	/**
-	 * Método que define a ordem de ordenação para todos os ordenadores
+	 * Mï¿½todo que define a ordem de ordenaï¿½ï¿½o para todos os ordenadores
 	 * @return
 	 * @throws Exception
 	 */
@@ -127,7 +147,7 @@ public class Auxiliar {
 		} else if (modo.equals("d")) { // Define ordem decrescente
 			return false;
 			
-		} else { // Comando de validação de modo de ordenação
+		} else { // Comando de validaï¿½ï¿½o de modo de ordenaï¿½ï¿½o
 			View.opcaoInvalida();			
 			return defineOrdem(ativaMenu);
 		}		

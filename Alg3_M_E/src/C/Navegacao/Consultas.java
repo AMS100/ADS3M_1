@@ -4,23 +4,18 @@ import App.Menus;
 import App.View;
 import C.Registrador;
 import C.Arquivos.Ficheiro;
+import C.Lista.ListaEncadeada;
 import M.Dados;
-import M.Arvore.ArvoreBinaria;
-import M.Lista.ListaEncadeada;
 import M.Utilitarios.Auxiliar;
 
 
 /**
  * Classe reponsável pelas consultas em todas as estruras.
  * @author Neimar, Aurelio
- * @param <T>
  */
-public class Consultas<T> {
+public class Consultas {
 	
-	public int contador = 0;
-	Registrador registrador = new Registrador();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	ArvoreBinaria<?> arvoreBinaria = new ArvoreBinaria<>();
 	
 	
 	/**
@@ -49,7 +44,7 @@ public class Consultas<T> {
 				+ "\nRegistro encontrado\n"
 				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
 				+"\n\nTotal de comparações:" +Auxiliar.getContador()+"\n");
-				Auxiliar.setContador(0); //Limpa variável contadora
+				Auxiliar.setContador(false); //Limpa variável contadora
 				
 		} else {
 		   	View.msge("\nNúmero não encontrado");
@@ -68,15 +63,15 @@ public class Consultas<T> {
 	    while (inicio <= fim && localizador == false) {
 	    	if (vet[meio] == campo) {
 	    		localizador = true;
-	    		Auxiliar.setContador(Auxiliar.getContador()+1);
+	    		Auxiliar.setContador(true);
 	    	} else {
-	    		Auxiliar.setContador(Auxiliar.getContador()+1);
+	    		Auxiliar.setContador(true);
 	        	if (campo < vet[meio]) {
 	        		fim = meio - 1;	  
-	        		Auxiliar.setContador(Auxiliar.getContador()+1);
+	        		Auxiliar.setContador(true);
 	            }else {
 	            	inicio = meio + 1;
-	            	Auxiliar.setContador(Auxiliar.getContador()+1);
+	            	Auxiliar.setContador(true);
 	            }
 	        	meio = (inicio + fim) / 2;
 	       }
@@ -113,31 +108,7 @@ public class Consultas<T> {
 
 //====================<< Busca em estruturas java >> ========================================		
 	
-	/**
-	 * 
-	 * @throws Exception 
-	 */
-	public void consultaEstruturas(String nomeArquivo) throws Exception{
-		
-		switch (Auxiliar.getOpcao()) {
-		
-		case "LISTA":			
-			//consultaArquivo(nomeArquivo, Auxiliar.digita("Contato"),true);
-			break;
 
-		case "ARVORE":
-			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-			arvoreBinaria.imprime();
-			
-			break;
-			
-		default:
-			View.opcaoInvalida();
-			break;
-		}
-	}
-	
-	
 	
 	
 	
@@ -151,38 +122,78 @@ public class Consultas<T> {
 	/**
 	 * Seleciona comando de consulta
 	 */
-	public void selecionaComando() {
+	private void selecionaComando(String nomeArquivo) {
 		try {
 			Menus.menuConsultas();					
 			switch (Auxiliar.digita("")) {
 			
-			case "navegar":
-				View.objetoNaoImplementado();				
-				selecionaComando();
+			case "novo":				
+				View.objetoNaoImplementado();
+				selecionaComando(nomeArquivo);
 				break;
-
-			case "nome":				
-				consultaEstruturas(Auxiliar.digita("Nome do arquivo"));
-				selecionaComando();
+			
+			case "remover":				
+				View.objetoNaoImplementado();
+				selecionaComando(nomeArquivo);
+				break;
+				
+			case "posfixa":				
+				Registrador.getArvoreBinaria().travessiaPosFixa();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "prefixa":				
+				Registrador.getArvoreBinaria().travessiaPreFixa();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "infixa":				
+				Registrador.getArvoreBinaria().travessiaInfixa();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "contar":				
+				Registrador.getArvoreBinaria().contaNodos();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "altura":				
+				Registrador.getArvoreBinaria().buscEmAltura(nomeArquivo);
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "profundidade":				
+				View.objetoNaoImplementado();
+				selecionaComando(nomeArquivo);
 				break;
 			
 			case "id":				
-				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
-				selecionaComando();
-				break;		
-			
-			case "arquivo":
-				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false, true);
-				selecionaComando();
+				carregaBuscaBinaria(nomeArquivo, Auxiliar.digitaNumero("Id a ser localizado"));
+				selecionaComando(nomeArquivo);
 				break;
 				
+			case "navegar":
+				View.objetoNaoImplementado();				
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "arquivo":
+				Ficheiro.leArquivo(nomeArquivo, false, "", false, true);
+				selecionaComando(nomeArquivo);
+				break;
+				
+			case "nome":				
+				View.objetoNaoImplementado();
+				selecionaComando(nomeArquivo);
+				break;
+			
 			case "sair":
 				View.sair();
 				break;
-				
+			
 			default:
 				View.opcaoInvalida();
-				selecionaComando();
+				selecionaComando(nomeArquivo);
 				break;
 			}			
 			
@@ -190,4 +201,37 @@ public class Consultas<T> {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	/**
+	 * 
+	 * @throws Exception 
+	 */
+	public void selecinaExtrutura() throws Exception{
+		String nomeArquivo = Auxiliar.digita("Nome do arquivo");
+		
+		switch (Auxiliar.getOpcao()) {
+		
+		case "LISTA":			
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
+			selecionaComando(nomeArquivo);
+			break;
+
+		case "ARVORE":			
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
+			selecionaComando(nomeArquivo);			
+			break;
+		
+		case "BINARIA":			
+			selecionaComando(nomeArquivo);
+			break;
+		
+		default:
+			View.opcaoInvalida();
+			break;
+		}
+	}
+	
+	
 }

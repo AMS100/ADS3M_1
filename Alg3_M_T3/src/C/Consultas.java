@@ -7,7 +7,7 @@ public class Consultas {
 	
 	MapaMod mapaMod = new MapaMod();
 	PrintMapa printMapa = new PrintMapa();
-	MapaCont mapaCont = new MapaCont();
+	Gerador gerador = new Gerador();
 	PrintNiveis PrintNiveis  = new PrintNiveis();
 	PrintNavios printNavios = new PrintNavios();
 	PrintSoldados printSoldado = new PrintSoldados();

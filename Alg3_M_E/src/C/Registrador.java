@@ -5,10 +5,12 @@ import java.io.IOException;
 import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
+import C.Arvores.Avl.ArvoreAVL;
+import C.Arvores.Binaria.ArvoreBinaria;
+import C.Lista.ListaOrdenada;
+import C.Lista.Nodo;
 import M.Contatos;
-import M.Arvore.ArvoreBinaria;
-import M.Lista.ListaOrdenada;
-import M.Lista.Nodo;
+import M.Dados;
 import M.Utilitarios.Auxiliar;
 import M.Utilitarios.Include;
 
@@ -22,16 +24,41 @@ public class Registrador{
 	static String acum =""; //Acumulador de dados para edição de arquivo 
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
-
+	static ArvoreAVL avl = new ArvoreAVL();
+	/**
+	 * Método de reperação de estado do objeto
+	 * @return
+	 */
+	public static ArvoreBinaria<String> getArvoreBinaria() {
+		return arvoreBinaria;
+	}
+	
+	
+	/**
+	 * Método de reperação de estado do objeto
+	 * @return
+	 */
+	public static ArvoreAVL getAvl() {
+		return avl;
+	}
 	
 	public static void setAcum(String acum) {
-		Registrador.acum = acum;
+		Registrador.acum += acum;
 	}
 		
 	public static String getAcum() {
 		return acum;
 	}
 	
+	/**
+	 * Informa quando a estrura de operação não é valida
+	 * @param ativaTipo
+	 * @throws Exception
+	 */
+	public static void informaEstrutura(boolean ativaTipo) throws Exception {
+		View.msge("\nArvore inválida\n");
+		Menus.menuArvores(true, ativaTipo, true);
+	}
 	
 	/**
 	 * Metodo responsavel por receber os dados da leitura do arquivo e insirir nas etruturas		
@@ -42,12 +69,27 @@ public class Registrador{
 
 		switch (Auxiliar.getOpcao()) {
 	
-		case "LISTA":
+		case "LISTA":			
 			lista.insert(new Nodo<String>(linha), lista.getHead());
 			break;
 		
 		case "ARVORE":
-			arvoreBinaria.insere(new M.Arvore.Nodo<String>(linha));
+			
+			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
+			
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {
+				avl = null;
+				avl.inserir(avl,Dados.getIndex());
+
+			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+				View.objetoNaoImplementado();
+				
+			} else{
+				informaEstrutura(false);
+				copiaArquivo(linha);
+			}
+			
 			break;
 			
 		default:
@@ -86,21 +128,35 @@ public class Registrador{
 	 * @throws Exception
 	 */
 	public void insereNovoRegistro(String nomeArquivo) throws Exception {
-		
+						
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":
 			gravaDados(nomeArquivo);
 			Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Lê arquivo após a insersão e padroniza a edição
-			lista.guardaEdicao();;
-			editaArquivo(nomeArquivo);	
+			lista.guardaEdicao();
+			editaArquivo(nomeArquivo);
+				
 			break;
 
-		case "ARVORE":
-			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-			arvoreBinaria.guardaEdicao();
-			editaArquivo(nomeArquivo);
+		case "ARVORE":			
+			if(Auxiliar.getDetalhes().equals("binaria") ) {
+				//gravaDados(nomeArquivo);
+				Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
+				//arvoreBinaria.guardaEdicao();
+				//editaArquivo(nomeArquivo);	
+			
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {
+
+	
+			
+			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+				
+			
+			} else{			
+				informaEstrutura(false);
+				insereNovoRegistro(nomeArquivo);
+			}			
 			break;
 			
 		default:

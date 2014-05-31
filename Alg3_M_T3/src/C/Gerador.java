@@ -9,7 +9,7 @@ import V.View;
  * Classe para edição e personalização dos navios (NÃO IMPLEMENTADA)
  * @author Neimar
  */
-public class MapaCont extends MapaMod {
+public class Gerador extends MapaMod {
 	
 	PrintMapa printMapa = new PrintMapa();
 	
