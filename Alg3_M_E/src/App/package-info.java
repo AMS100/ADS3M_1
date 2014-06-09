@@ -1,6 +1,6 @@
 /**
- * @author Neimar
+ * @author Neimar, Aurélio
  *
  */
 package App;
-// "Aplicação" Onde o programa principal será executado
+// Onde o programa principal será executado

@@ -2,10 +2,11 @@ package C.Lista;
 
 import App.View;
 import C.Registrador;
+import M.Utilitarios.Auxiliar;
 
 /**
- * Classe responsável pela manipulação a lista
- * @author neimar , Aurelio
+ * Classe responsável pela manipulação da lista
+ * @author Neimar, Aurélio
  * * @param <T>
  */
 public class ListaEncadeada<T extends Comparable<T>> {
@@ -20,7 +21,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 
 
-	public void insert(Nodo<T> novo) {
+	public void insere(Nodo<T> novo) {
 		novo.setNext(head);
 		head = novo;
 
@@ -29,7 +30,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 
 	/**
-	 * Método de insereção de nodos na lista
+	 * Método de inserção de nodos na lista
 	 * @param novo
 	 * @param anterior
 	 */
@@ -55,19 +56,22 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	public void guardaEdicao() {
 		Nodo<?> nodo = head;
 		do {	
-			Registrador.setAcum(Registrador.getAcum() +"\n" +nodo.getData()); // Acumalador de ordenação
+			Registrador.setAcum("\n" + nodo.getData()); // Acumalador de ordenação
 			nodo = nodo.getNext();
 		} while (nodo != null);	
 	}
 
 	/**
-	 * Imprime quando habilitado na tela e edita registrador após a ordenação
+	 * Imprime na tela quando habilitado e edita registrador após a ordenação
 	*/
-	public void imprime(boolean impressaoPrevia) {
+	public void imprime(boolean cabecalho) {
+		if (cabecalho == true) {
+			View.msgc("\nIMPESSÃO DA - " + Auxiliar.getOpcao().toUpperCase() + "\n\n");
+		}
 		try {
 			Nodo<?> nodo = head;
 			do {
-				if (impressaoPrevia){View.msg("\n" + nodo.getData());} // Imprime a lista para consulta prévia em tempo de execução
+				View.msg("\n" + nodo.getData()); // Imprime a lista para consulta prévia em tempo de execução
 				nodo = nodo.getNext();				
 			} while (nodo != null);			
 

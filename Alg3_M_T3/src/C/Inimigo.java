@@ -75,7 +75,7 @@ public class Inimigo {
 	public void ValidaAlvo(int linha, int coluna,String dado) throws Exception {
 		
 		if ((linha >= MapaMod.getLinha() || coluna >= MapaMod.getColuna()) &&
-			(linha < MapaMod.getLinha() || coluna < MapaMod.getColuna())){
+			(linha < MapaMod.getLinha() || coluna < MapaMod.getColuna())) {
 				View.msgb("As coordenadas não sao válidas!");
 		} else {
 			chances--;	

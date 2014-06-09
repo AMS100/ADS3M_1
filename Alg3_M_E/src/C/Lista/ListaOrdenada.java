@@ -1,9 +1,8 @@
 package C.Lista;
 
-
 /**
- * Classe responsavel pela ordenação do dodos ontes da insersão no arquivo
- * @author Neimar, Aurélio *
+ * Classe responsável pela ordenação do dados antes da insersão no arquivo
+ * @author Neimar, Aurélio
  * @param <T>
  */
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
@@ -33,10 +32,10 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 
 	@Override
-	public void insert(Nodo<T> novo) {
+	public void insere(Nodo<T> novo) {
 		Nodo<T> anterior = findBefore(novo);
 		if (anterior == null) {
-			super.insert(novo);
+			super.insere(novo);
 		} else {
 			super.insert(novo, anterior);
 		}
@@ -45,13 +44,13 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 	@Override
 	public void insert(Nodo<T> novo, Nodo<T> anterior) {
-		insert(novo);
+		insere(novo);
 	}
 
 
 	@Override
 	public void append(Nodo<T> novo) {
-		insert(novo);
+		insere(novo);
 	}
 
 }

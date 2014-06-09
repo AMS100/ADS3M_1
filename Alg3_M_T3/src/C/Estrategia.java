@@ -35,7 +35,7 @@ public class Estrategia {
 					MapaMod.mapa[i][j] = "-";					
 				}
 					
-				if (i == 5 && j >= nivel-1 && j < (NaviosMod.getUnidDestroyers() + nivel -1)) {
+				if (i == 5 && j >= nivel -1 && j < (NaviosMod.getUnidDestroyers() + nivel -1)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
@@ -51,7 +51,7 @@ public class Estrategia {
 					MapaMod.mapa[i][j] = "-";					
 				}
 		
-				if (i == 1 && j >= nivel && j < (NaviosMod.getUnidTorpedeiros()+nivel)) {
+				if (i == 1 && j >= nivel && j < (NaviosMod.getUnidTorpedeiros() + nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
@@ -109,7 +109,7 @@ public class Estrategia {
 	 */
 	private void carrega() throws Exception {
 		
-		if(MapaMod.getColuna()*MapaMod.getLinha() == contUnidades) {
+		if (MapaMod.getColuna()*MapaMod.getLinha() == contUnidades) {
 			posiciona();
 			PrintSoldado.imprime();
 		} else {

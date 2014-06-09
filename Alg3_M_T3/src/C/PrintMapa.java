@@ -5,10 +5,10 @@ import V.View;
 
 /**
  * Classe de impressão dos dados do mapaMod
- * @author Naimar, Aurélio
+ * @author Neimar, Aurélio
  */
 public class PrintMapa {
-	int j,i;
+	int j, i;
 	char letra = 'A';
 	MapaMod mapaMod = new MapaMod();
 	
@@ -46,7 +46,7 @@ public class PrintMapa {
 	 */
 	public void imprime(boolean mostraMsgCabecalho,Object texto)throws Exception {
 		try {
-			abilitaMsg(mostraMsgCabecalho,texto);
+			abilitaMsg(mostraMsgCabecalho, texto);
 			nomeiaConluna();
 			for (i = 0; i <  MapaMod.getLinha(); i++) {
 				View.msg("\n" + i + " ");

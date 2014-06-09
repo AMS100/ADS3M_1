@@ -1,6 +1,6 @@
 /**
- * @author Neimar
+ * @author Neimar, Aurélio
  *
  */
-package C.Arvores.Avl;
-//Pacote de armazenamento da estrutura arvore Avl
+package C.Arvore.Avl;
+// Pacote de armazenamento da estrutura da árvore AVL

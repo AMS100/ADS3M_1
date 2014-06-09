@@ -20,7 +20,7 @@ public class PrintNavios {
 		if (parametro.equals("portaAvioes") && filtrar == true || filtrar == false) {
 			acum += "\nPortaAvioes " 
 					+ NaviosMod.getPortaAvioes()
-					+ " de " +NaviosMod.getUnidPortaAvioes() + " unidades\n";
+					+ " de " + NaviosMod.getUnidPortaAvioes() + " unidades\n";
 		} 
 			
 		if (parametro.equals("destroyers") && filtrar == true || filtrar == false) {
@@ -37,14 +37,14 @@ public class PrintNavios {
 				
 		if (parametro.equals("torpedeiros") && filtrar == true || filtrar == false) {
 			acum += "\nTorpedeiros " 
-					+ NaviosMod.getTorpedeiros()
-					+ " de " +NaviosMod.getUnidTorpedeiros() + " unidades\n";;
+				 + NaviosMod.getTorpedeiros()
+				 + " de " + NaviosMod.getUnidTorpedeiros() + " unidades\n";;
 		} 
 		
 		if (parametro.equals("submarinos") && filtrar == true || filtrar == false) {
 			acum += "\nSubmarinos " 
 					+ NaviosMod.getSubmarinos()
-					+ " de " +NaviosMod.getUnidSubmarinos() + " unidades\n";
+					+ " de " + NaviosMod.getUnidSubmarinos() + " unidades\n";
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class PrintNavios {
 	}
 	
 	/**
-	 * Abilita cabeçalho de impressão
+	 * Habilita cabeçalho de impressão
 	 * @param filtrar
 	 * @param mostraCabecalho
 	 */

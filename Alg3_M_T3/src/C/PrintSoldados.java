@@ -27,7 +27,7 @@ public class PrintSoldados extends SoldadoMod {
 	public void avaliaPontos() {
 		if (SoldadoMod.getPontuacaoInicial() > 0) {
 			View.msg("Pontuação inicial: " 
-			+ Inimigo.getChances() +"\n"); // Imprime chances em tempo real do jogo
+			+ Inimigo.getChances() + "\n"); // Imprime chances em tempo real do jogo
 		} else {
 			View.msgr("O soldado " + SoldadoMod.getNomeSoldado()
 				+ " não possui pontos para iniciar o jogo!\n");

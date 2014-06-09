@@ -12,7 +12,7 @@ public class Appt3 {
 
 	
 	private void escreveCabecalho() {
-	    View.msgb("		JOGO BATALHA NAVAL \n\n		     BEM-VINDO");
+	    View.msgb("		          JOGO BATALHA NAVAL \n\n	     	               BEM-VINDO");
 	}
 	
 	/**

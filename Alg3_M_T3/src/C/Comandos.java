@@ -28,7 +28,7 @@ public class Comandos extends View {
 		switch (digita("")) {
 		
 		case "navios":
-			consulta.consultaNavios(true,false);
+			consulta.consultaNavios(true, false);
 			filtra();
 			break;
 		
@@ -66,7 +66,7 @@ public class Comandos extends View {
 			break;
 
 		case "navios":
-			consulta.consultaNavios(false,true);
+			consulta.consultaNavios(false, true);
 			imprime();
 			break;
 			

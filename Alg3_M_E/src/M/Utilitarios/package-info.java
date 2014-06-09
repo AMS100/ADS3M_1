@@ -2,4 +2,4 @@
  * @author Neimar
  */
 package Mo.Utilitarios;
-//Pacote de classes genÃ©ricas qualquer programa
+// Pacote de classes genéricas qualquer programa

@@ -1,5 +1,5 @@
 /**
- * @author Neimar, Aurelio
+ * @author Neimar, Aurélio
  */
 package C.Arvores.Binaria;
-// Pacote de armazenamento da estrutura arvore binaria
+// Pacote de armazenamento da estrutura árvore binária

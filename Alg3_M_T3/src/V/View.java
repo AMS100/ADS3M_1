@@ -24,29 +24,29 @@ public class View {
 	 */
 	public static void msgb(Object desc) {
 		System .out.print(
-			"\n=====================================================================\n"
-			+desc
-			+"\n=====================================================================\n");
+			  "\n==========================================================================\n"
+			+ desc
+			+ "\n==========================================================================\n");
 	}
 	
 	
 	public static void msgc(Object desc) {
 		System .out.print(
-			"\n=====================================================================\n"
-			+desc);
+			"\n==========================================================================\n"
+			+ desc);
 	}
 
 
 	public static void msgr(Object desc) {
 		System .out.print(
 			desc
-			+"\n=====================================================================\n");
+			+ "\n==========================================================================\n");
 	}	
 	
 
 	public static void msgl() {
 		System .out.print(
-			"\n=====================================================================\n");
+			"\n==========================================================================\n");
 	}
 	
 	
@@ -125,28 +125,28 @@ public class View {
 		
 		switch (status) { // Definidor de status da atividade
 		
-		case -1:r = "Pendente " +s; 
+		case -1:r = "Pendente " + s; 
 			break;
-		case 0:	r = "Não definido " +s; 
+		case 0:	r = "Não definido " + s; 
 			break;
-		case 1:	r = "Em planejamento " +s; 
+		case 1:	r = "Em planejamento " + s; 
 			break;
-		case 2:	r = "Em desenvolvimento " +s; 
+		case 2:	r = "Em desenvolvimento " + s; 
 			break;
-		case 3:	r = "Em teste " +s; 
+		case 3:	r = "Em teste " + s; 
 			break;
-		case 4:	r = "Em revisão " +s; 
+		case 4:	r = "Em revisão " + s; 
 			break;
-		case 5:	r = "Concluído(a) parcialmente " +s; 
+		case 5:	r = "Concluído(a) parcialmente " + s; 
 			break;
-		case 6:	r = "Concluído(a) " +s; 
+		case 6:	r = "Concluído(a) " + s; 
 			break;
-		case 7:	r = "Finalizado(a) " +s; 
+		case 7:	r = "Finalizado(a) " + s; 
 			break;		
 		default:
 			r = "inválido "; break;
 		}
 		
-		return "Status: " +r;
+		return r;
 	}
 }

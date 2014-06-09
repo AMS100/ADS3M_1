@@ -20,9 +20,9 @@ public class Consultas {
 	public void listaConsultas() throws Exception {
 		batalha.iniciaMapa();
 		View.msgl();
-		printNavios.imprime(false,true);
+		printNavios.imprime(false, true);
 		View.msgl();
-		PrintNiveis.imprime(false ,true);
+		PrintNiveis.imprime(false, true);
 		View.msgl();
 		printSoldado.imprime();
 	}
@@ -45,7 +45,7 @@ public class Consultas {
 	 */
 	public void consultaNiveis(Boolean filtrar) throws Exception {
 		View.msgl();
-		PrintNiveis.imprime(filtrar,true);
+		PrintNiveis.imprime(filtrar, true);
 	}
 	
 	/**

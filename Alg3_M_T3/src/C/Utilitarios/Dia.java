@@ -18,7 +18,7 @@ public class Dia {
 
 	public void ImprimeHora() {		
 		diaHora.set(Calendar.DST_OFFSET,0);		
-		View.msg("São " +sdf.format(diaHora.getTime()) +"hs");
+		View.msg("São " + sdf.format(diaHora.getTime()) + "hs");
 	}
 	
 	/**
@@ -53,17 +53,17 @@ public class Dia {
 		int hora =  diaHora.get(Calendar.HOUR_OF_DAY);
 		
 		if (hora >= 0 && hora < 12) {
-			defineCabecalho(sdf.format(diaHora.getTime()) +" da manhã." +"");
+			defineCabecalho(sdf.format(diaHora.getTime()) + " da manhã." + "");
 			pressagios.desejaBomDia();
 		}
 
 		if (hora >= 12  && hora < 18) {
-			defineCabecalho(sdf.format(diaHora.getTime()) +" da tarde." +"");
+			defineCabecalho(sdf.format(diaHora.getTime()) + " da tarde." + "");
 			pressagios.desejaBoaTarde();
 		}	
 		
 		if (hora >= 18  && hora <= 24) {
-			defineCabecalho(sdf.format(diaHora.getTime()) +" da noite." +"");
+			defineCabecalho(sdf.format(diaHora.getTime()) + " da noite." + "");
 			pressagios.desejaBoaNoite();
 		}	
 	}

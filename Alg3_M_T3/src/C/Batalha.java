@@ -8,7 +8,7 @@ import M.NiveisMod;
 import V.View;
 
 /**
- * Classe de execução do jogo, bem como controladora de passagens de fase do jogo
+ * Classe de execução do jogo, bem como controladora de passagens de fase
  * @author Neimar, Aurélio
  */
 public class Batalha {
@@ -37,7 +37,7 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de execução a partir da 2ª fase do jogo, avança para próximo nível
+	 * Método de execução a partir da 2ª fase. Avança para próximo nível
 	 * @throws Exception
 	 */
 	protected void pulaFase() throws Exception {			
@@ -103,11 +103,11 @@ public class Batalha {
 	 * @throws Exception
 	 */
 	protected void informaVitoria(int nroFase) throws Exception {	
-		View.msgb("PARABÉNS, VOCÊ VENCEU A FASE "+addn);
+		View.msgb("PARABÉNS, VOCÊ VENCEU A FASE " + addn);
 	}
 	
 	/**
-	 * Avaliação para passagem das fases.
+	 * Avaliação para passagem das fases
 	 * @throws Exception
 	 */
 	protected void avalia() throws Exception {		
@@ -140,7 +140,7 @@ public class Batalha {
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton4()) {
-			if (n4 == 0) {	
+			if (n4 == 0) {
 				n4++;
 				informaVitoria(addn);
 				addn++;	
@@ -152,7 +152,7 @@ public class Batalha {
 			View.msge(
 				"\n\nPARABÉNS, VOCÊ VENCEU A FASE 5\n"
 				+ "SUPEROU TODOS OS DESAFIOS PROPOSTOS NO JOGO.\n");
-		}	
+		}
 	}
 	
 	
@@ -162,15 +162,15 @@ public class Batalha {
 	 */
 	public void contaFase() throws Exception {
 		
-		if (Inimigo.getChances()>0) {
-			View.msg("Chances: " +Inimigo.getChances()+"\nPontuação: " + Inimigo.getAcertos());
-			avalia();	
+		if (Inimigo.getChances() >0) {
+			View.msg("Chances: " + Inimigo.getChances() +"\nPontuação: " + Inimigo.getAcertos());
+			avalia();
 		} else {
 			View.msg("\nChances: " + Inimigo.getChances() + "\nPontuação: " + Inimigo.getAcertos());
 			View.msge(					
 				"\nVOCÊ PERDEU O JOGO.\n"
-				+"Suas chances de jogo foram esgotadas.\n"
-				+"Inicie o jogo novamente. \n");				
+				+ "Suas chances de jogo foram esgotadas.\n"
+				+ "Inicie o jogo novamente.\n");				
 		}			
 	}
 

@@ -3,17 +3,17 @@ package M.Utilitarios;
 import App.View;
 
 public class Pressagios {
-	String sauda;	
-	
+	String sauda;
+
 	public void desejaBomDia() {
 		View.msg("Bom dia.\n");
 	}
-	
+
 	public void desejaBoaTarde() {
 		View.msg("Boa tarde.\n");
 	}
-	
+
 	public void desejaBoaNoite() {
-		View.msg("Boa noite.\n");	
+		View.msg("Boa noite.\n");
 	}
 }
